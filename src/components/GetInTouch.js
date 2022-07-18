@@ -7,7 +7,9 @@ const GetInTouch = ({ scroll }) => {
     const getInTouch = useRef(null);
 
     useEffect(() => {
-
+        if (scroll === 0) {
+            return;
+        }
         if (getInTouch.current) {
             getInTouch.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
