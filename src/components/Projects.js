@@ -1,4 +1,5 @@
 import { MdArrowRightAlt } from "react-icons/md";
+import { AnimationOnScroll } from "react-animation-on-scroll";
 
 const Projects = () => {
 
@@ -26,27 +27,31 @@ const Projects = () => {
 
 
     return (
-        <section className="p-12 lg:p-24 flex-col lg:flex lg:flex-row font-ubuntu max-w-7xl mx-auto min-w-[350px]">
-            <div className="xl:mr-16 xl:text-right w-24 lg:w-52 mx-auto lg:mx-0 flex-shrink-0 text-xl text-indigo-600 font-medium pb-16">PROJECTS</div>
+        <section className="relative p-12 pt-16 lg:p-24 flex-col xl:flex xl:flex-row justify-center font-ubuntu max-w-7xl mx-auto min-w-[350px] z-10">
+            <div className="xl:mr-16 xl:text-right w-24 lg:w-52 text-center mx-auto xl:mx-0 flex-shrink-0 text-3xl text-green-300 font-caveat font-medium pb-16">I've Built</div>
+
             <div className="max-w-2xl md:mx-auto xl:m-0">
                 {projectDetails.map((project, i) => {
                     const codeurl = `${project.github}`;
                     const siteurl = `${project.website}`;
                     return (
-                        <div className="mb-16 border-l-2 border-indigo-400 pl-2 sm:border-0" key={i}>
+                        <AnimationOnScroll animateIn="animate-fade-in-left">
+                            <div className="mb-16 border-l-2 border-indigo-400 pl-2 sm:border-0" key={i}>
 
-                            <div className="pb-6 sm:pb-4 font-medium flex flex-col sm:flex-row justify-between">
-                                <div className="text-lg text-gray-700">{project.title}</div>
-                                <div className="flex text-xs space-x-4 font-normal pt-2 text-indigo-500 cursor-pointer sm:pr-12">
-                                    <div className="hover:underline"><a href={codeurl} target="_blank" rel="noreferrer"> View the Code </a> </div>
-                                    <div className="flex hover:underline text-pink-500 animate-pulse hover:animate-none"> <a href={siteurl} target="_blank" rel="noreferrer"> Visit the Live Website </a> <MdArrowRightAlt className="pl-1 text-base" /></div>
+                                <div className="pb-6 sm:pb-4 font-medium flex flex-col sm:flex-row justify-between">
+                                    <div className="text-lg text-gray-300">{project.title}</div>
+                                    <div className="flex text-xs space-x-4 font-normal pt-2 text-green-700 cursor-pointer sm:pr-12">
+                                        <div className=" transition ease-in-out hover:scale-110 hover:underline"><a href={codeurl} target="_blank" rel="noreferrer"> View the Code </a> </div>
+                                        <div className="flex hover:underline text-yellow-500 animate-pulse transition ease-in-out hover:scale-110 hover:animate-none"> <a href={siteurl} target="_blank" rel="noreferrer"> Visit the Live Website </a> <MdArrowRightAlt className="pl-1 text-base" /></div>
+                                    </div>
                                 </div>
+
+                                <div className="pb-6 font-light text-sm sm:text-base text-gray-300">{project.description}</div>
+                                <div className="sm:pb-4 text-xs font-medium text-gray-300 flex flex-wrap">{project.tags.map((tag, i) => { return (<div key={i} className="px-1.5 py-0.5 mr-2 mb-2 border-2 rounded-md text-gray-400 border-green-300">{tag}</div>) })}</div>
+
                             </div>
-
-                            <div className="pb-6 font-light text-sm sm:text-base text-gray-700">{project.description}</div>
-                            <div className="sm:pb-4 text-xs font-medium text-gray-700 flex flex-wrap">{project.tags.map((tag, i) => { return (<div key={i} className="px-1.5 py-0.5 mr-2 mb-2 border-2 rounded-md text-gray-500 border-indigo-400">{tag}</div>) })}</div>
-
-                        </div>)
+                        </AnimationOnScroll>
+                    )
                 })}
 
             </div>
