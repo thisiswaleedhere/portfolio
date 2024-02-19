@@ -2,18 +2,17 @@ import { useEffect, useState, useRef } from "react";
 import { AnimationOnScroll } from "react-animation-on-scroll";
 
 
-const GetInTouch = ({ scroll }) => {
+const GetInTouch = ({ scroll, setScroll }) => {
 
     const [contactMessage, setContactMessage] = useState({ name: "", email: "", message: "" });
     const getInTouch = useRef(null);
 
     useEffect(() => {
-        if (scroll === 0) {
-            return;
-        }
-        if (getInTouch.current) {
+        if (scroll === 3 && getInTouch.current) {
             getInTouch.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            setTimeout(() => { setScroll(0) }, 2000);
         }
+        else if (scroll === 0) return;
     }, [scroll]);
 
 
@@ -27,7 +26,7 @@ const GetInTouch = ({ scroll }) => {
             <div className="w-full md:w-4/5 md:mx-auto lg:w-3/5 xl:mx-0 xl:w-3/5 text-gray-300 ">
 
                 <form id="contactform" action="https://getform.io/f/673f0f39-208b-4c92-b2d8-4f30404bdd59" method="POST" rel="noopener" >
-                    <AnimationOnScroll animateIn="animate-fade-in-left" >
+                    <AnimationOnScroll animateOnce animateIn="animate-fade-in-left" >
                         <div className="mt-3">
                             <label htmlFor="name" className="pl-2">Name</label>
                             <input
@@ -41,7 +40,7 @@ const GetInTouch = ({ scroll }) => {
                             />
                         </div>
                     </AnimationOnScroll>
-                    <AnimationOnScroll animateIn="animate-fade-in-left" >
+                    <AnimationOnScroll animateOnce animateIn="animate-fade-in-left" >
                         <div className="mt-5">
                             <label htmlFor="email" className="pl-2">Email</label>
                             <input
@@ -55,7 +54,7 @@ const GetInTouch = ({ scroll }) => {
                             />
                         </div>
                     </AnimationOnScroll>
-                    <AnimationOnScroll animateIn="animate-fade-in-left" >
+                    <AnimationOnScroll animateOnce animateIn="animate-fade-in-left" >
                         <div className="mt-5">
                             <label htmlFor="message" className="pl-2">Message</label>
                             <textarea className="w-full bg-gray-800 shadow-xl border-0 appearance-none  text-gray-300 p-1 sm:p-2 md:p-3 indent-2 focus:ring-0 focus:border-green-300 focus:border-2 "
@@ -68,7 +67,7 @@ const GetInTouch = ({ scroll }) => {
                             />
                         </div>
                     </AnimationOnScroll>
-                    <AnimationOnScroll animateIn="animate-fade-in-left" >
+                    <AnimationOnScroll animateOnce animateIn="animate-fade-in-left" >
                         <button type="submit" className="mt-5 w-full transition ease-in-out hover:font-bold hover:bg-green-300 text-2xl font-caveat hover:text-black h-[50px] px-4 py-2 shadow-xl bg-gray-800 text-green-300 border-green-300 border-2"> Send Message</button>
                     </AnimationOnScroll>
                 </form>

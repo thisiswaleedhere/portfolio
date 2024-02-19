@@ -1,7 +1,8 @@
 import { MdArrowRightAlt } from "react-icons/md";
 import { AnimationOnScroll } from "react-animation-on-scroll";
+import { useEffect, useRef } from "react";
 
-const Projects = () => {
+const Projects = ({ scroll, setScroll }) => {
 
     const projectDetails = [{
         title: "WatchMe",
@@ -25,9 +26,20 @@ const Projects = () => {
         website: "https://booksta.netlify.app/"
     }]
 
+    const projects = useRef(null);
+
+    useEffect(() => {
+        if (scroll === 1 && projects.current) {
+            projects.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            setTimeout(() => { setScroll(0) }, 2000);
+        }
+        else if (scroll === 0) return;
+    }, [scroll]);
+
+
 
     return (
-        <section className="relative p-12 pt-16 lg:p-24 flex-col xl:flex xl:flex-row justify-center font-ubuntu max-w-7xl mx-auto min-w-[350px] z-10">
+        <section className="relative p-12 pt-16 lg:p-24 flex-col xl:flex xl:flex-row justify-center font-ubuntu max-w-7xl mx-auto min-w-[350px] z-10" ref={projects}>
             <div className="xl:mr-16 xl:text-right w-24 lg:w-52 text-center mx-auto xl:mx-0 flex-shrink-0 text-3xl text-green-300 font-caveat font-medium pb-16">I've Built</div>
 
             <div className="max-w-2xl md:mx-auto xl:m-0">
@@ -35,7 +47,7 @@ const Projects = () => {
                     const codeurl = `${project.github}`;
                     const siteurl = `${project.website}`;
                     return (
-                        <AnimationOnScroll animateIn="animate-fade-in-left">
+                        <AnimationOnScroll animateOnce animateIn="animate-fade-in-left">
                             <div className="mb-16 border-l-2 border-indigo-400 pl-2 sm:border-0" key={i}>
 
                                 <div className="pb-6 sm:pb-4 font-medium flex flex-col sm:flex-row justify-between">

@@ -28,12 +28,12 @@ function Home() {
             <Leaf className="absolute rotate-90 -left-20 -top-32 hidden md:block h-[500px] opacity-[.025]" />
             <Leaf className="absolute right-20 top-32 hidden md:block h-[500px] opacity-[.025]" />
             <Leaf className="absolute rotate-45 left-80 top-[500px] hidden md:block h-[300px] opacity-5" />
-
+            {/* 
             <div className="absolute animate-move-dark border-4 border-green-100 w-48 h-80 hidden xl:block xl:right-[300px] 2xl:right-[325px] top-[330px] bg-transparent opacity-20 z-20"></div>
             <div className="absolute animate-move-light border-4 border-green-200 w-48 h-80 hidden xl:block xl:right-[320px] 2xl:right-[348px] top-[300px] bg-transparent z-20"></div>
 
             <div className="absolute animate-move-dark-small border-4 border-green-100 w-28 h-40 sm:h-64 sm:w-40 md:h-[258px] xl:hidden right-0 left-4 mx-auto text-center top-[198px] sm:top-[208px] md:top-[248px] lg:top-[265px] bg-transparent opacity-20 z-20"></div>
-            <div className="absolute animate-move-light-small border-4 border-green-200 w-28 h-40 sm:h-64 sm:w-40 md:h-[258px] xl:hidden right-7 left-0 mx-auto text-center top-[185px] sm:top-[195px] md:top-[232px] lg:top-[250px] bg-transparent z-20"></div>
+            <div className="absolute animate-move-light-small border-4 border-green-200 w-28 h-40 sm:h-64 sm:w-40 md:h-[258px] xl:hidden right-7 left-0 mx-auto text-center top-[185px] sm:top-[195px] md:top-[232px] lg:top-[250px] bg-transparent z-20"></div> */}
 
             {/* About Me  */}
             <Semicircle className="absolute top-[770px] right-0 opacity-60 blur-3xl z-0" />
@@ -76,9 +76,9 @@ function Home() {
             <Title />
             <Header setScroll={setScroll} />
             <AboutMe />
-            <Skills />
-            <Projects />
-            <GetInTouch scroll={scroll} />
+            <Skills scroll={scroll} setScroll={setScroll} />
+            <Projects scroll={scroll} setScroll={setScroll} />
+            <GetInTouch scroll={scroll} setScroll={setScroll} />
             <Footer />
 
 
