@@ -4,7 +4,7 @@ import React from "react";
 
 const Title = () => {
     return (
-        <div className="relative max-w-8xl min-w-[350px] z-10">
+        <div className="relative max-w-8xl xl:py-16 min-w-[350px] z-10">
 
             <div className="flex mx-auto justify-center">
 

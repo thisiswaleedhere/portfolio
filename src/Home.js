@@ -18,7 +18,7 @@ function Home() {
 
     return (
 
-        <div className='relative h-full w-full mx-auto bg-[#131313] max-w-[1580px] min-w-[350px]'>
+        <div className='relative h-full w-full mx-auto bg-[#131313] max-w-[2580px] min-w-[350px]'>
 
             {/* Hero Section */}
             <Semicircle className="absolute -top-20 right-0 opacity-60 blur-3xl z-0" />
