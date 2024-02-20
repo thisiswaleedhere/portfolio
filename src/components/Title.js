@@ -1,5 +1,5 @@
 import React from "react";
-import { ReactComponent as LogoMW } from "../images/LOGOMW.svg";
+// import { ReactComponent as LogoMW } from "../images/LOGOMW.svg";
 
 
 const Title = () => {
