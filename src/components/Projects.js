@@ -4,28 +4,36 @@ import { useEffect, useRef } from "react";
 
 const Projects = ({ scroll, setScroll }) => {
 
-    const projectDetails = [{
-        title: "WatchMe",
-        description: "A movie watchlist app with CRUD functionality with its data stored in Firestore. The app has Firebase authentication and gets its data from the TMDB API.",
-        tags: ["React", "Tailwind", "Javascript", "React router", "Firebase", "Firestore", "TMDB API"],
-        github: "https://github.com/thisiswaleedhere/movie-watchlist",
-        website: "https://watchme-moviewatchlist.netlify.app/"
-    },
-    {
-        title: "Day Out Companion",
-        description: "An app to plan your outing anywhere in the world that helps you find the best hotels, restaurants and attractions and display it on a map for easy viewing.",
-        tags: ["React", "Tailwind", "Javascript", "Pigeon Maps", "Travel Advisor API", "Axios"],
-        github: "https://github.com/thisiswaleedhere/day-out-companion",
-        website: "https://day-out-companion.vercel.app/"
-    },
-    {
-        title: "Booksta",
-        description: "An e-commerce website for books that uses state management using a combination of useReducer hook and Context API.",
-        tags: ["React", "Tailwind", "Javascript", "React router", "useReducer", "Context API"],
-        github: "https://github.com/thisiswaleedhere/Booksta-book-selling-site",
-        website: "https://booksta.netlify.app/"
-    }]
-
+    const projectDetails = [
+        {
+            title: "Netflix Twin",
+            description: "A mock streaming service platform designed similar to the Netflix UI. The app has Firebase authentication and gets its data from the TMDB API.",
+            tags: ["React", "Tailwind", "Javascript", "Firebase", "Redux Toolkit", "TMDB API", "Authentication", "React router"],
+            github: "https://github.com/thisiswaleedhere/netflix-gpt",
+            website: "https://netflix-twin-ui.vercel.app/"
+        },
+        {
+            title: "Day Out Companion",
+            description: "An app to plan your outing anywhere in the world that helps you find the best hotels, restaurants and attractions and display it on a map for easy viewing.",
+            tags: ["React", "Tailwind", "Javascript", "Pigeon Maps", "Travel Advisor API", "Axios"],
+            github: "https://github.com/thisiswaleedhere/day-out-companion",
+            website: "https://day-out-companion.vercel.app/"
+        },
+        {
+            title: "WatchMe",
+            description: "A movie watchlist app with CRUD functionality with its data stored in Firestore. The app has Firebase authentication and gets its data from the TMDB API.",
+            tags: ["React", "Tailwind", "Javascript", "React router", "Firebase", "Firestore", "TMDB API"],
+            github: "https://github.com/thisiswaleedhere/movie-watchlist",
+            website: "https://watchme-moviewatchlist.netlify.app/"
+        },
+        // {
+        //     title: "Booksta",
+        //     description: "An e-commerce website for books that uses state management using a combination of useReducer hook and Context API.",
+        //     tags: ["React", "Tailwind", "Javascript", "React router", "useReducer", "Context API"],
+        //     github: "https://github.com/thisiswaleedhere/Booksta-book-selling-site",
+        //     website: "https://booksta.netlify.app/"
+        // }]
+    ]
     const projects = useRef(null);
 
     useEffect(() => {
